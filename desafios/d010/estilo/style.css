@@ -1,0 +1,221 @@
+@charset "UTF8";
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap');
+
+
+/*@import url('https://fonts.googleapis.com/css2? family= Rubik+Iso & display=swap');
+ aqui é o import para usar uma font do google fonts, ou seja, uma fonte externa
+ OBS: essa font não ta dando certo der importada do google fonts*/
+
+ 
+
+ @font-face{/* isso  é para se usar uma font importada de dentro da pasta do projeto, ou seja, uma font baixada*/
+    font-family: 'Android';
+    src: url(../fontes/idroid.otf) format('opentype'); 
+    
+    font-weight: normal;
+}
+
+*{ /* esse seletor * ele é global, ou seja tudo q estiver dentro dele é editavel, nessa situação eu tirei toda a margem e padding de todos os elementos da pagina*/
+    margin: 0%;
+    padding: 0%;
+}
+
+:root{ /* essa pseudoclasse serve para declarar variavel, para deixar as escolhas e mudanças das cores e fontes*/
+   
+    --cor0: #c5ebd6; /* para declarar uma variavel vc colocar primeiro os -- e escolhe o nome da varial e logo depois dos : vc esolhe a cor ou a fonteq quer usar na variavel declarada.*/
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --font-padrao: arial, verdana, helvetica, sans-serif; /* aqui foi declarada uma variavel uma font padrão q vai fazer parte de todo o site*/
+    
+    --font-destaque: 'Noto Sans Linear B', cursive; /* essa font só é possivel ser usada graças ao import la em cima, pq ela foi copiada e colada do google fontes*/
+
+    --font-android:'Android', cursive; /* essa font só pode ser usada graças a font-face la em cima, pq ela é uma font baixada q esta dentro da pasta do projeto*/
+
+}
+
+body{
+    background-color: var(--cor0);/* a cor escolhida foi a da classe declarada como cor0*/
+    font-family: var(--font-padrao);/* a font escolhida foi a da classe declarada como font-padrão*/
+}
+
+a.externo::after{/*todo link q for externo eu vou por depois dele*?*/
+    content: '\00A0\1f517';
+
+}
+
+div.video{
+    background-color: var(--cor5);
+    padding: 20px;
+    padding-bottom: 50%;
+    margin: 0px -20px 30px -20px;
+    position: relative;
+}
+
+div.video > iframe{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+}
+
+
+
+header{
+   background-color: var(--cor4); /* aqui esta escolhido a cor do cabeçalho e o tamanho*/
+   background-image: linear-gradient(to bottom, var(--cor4), var(--cor5) );
+   max-height: 150px;
+   
+   text-align: center;
+   padding-top: 40px;
+   margin-bottom: 0px;
+   }
+
+header > p{ /* aqui esta escolhido a cor do paragrafo no cabeçalho*/
+    font-family: var(--font-padrao);
+    
+    color: white;
+    font-size: 1.2em;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+header > h1 { /* aqui esta escolhido a cor e font do titulo principal do cabeçalho*/ 
+    color: white;
+    font-family: var(--font-destaque);
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px black;
+}
+
+nav{/* aqui esta escolhido a cor do menu de navegação*/
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 9px 7px rgba(0, 0, 0, 0.534);
+    margin-top: 1px;
+    text-align: left;
+}
+
+nav > a{
+    color: var(--cor1);
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bolder;
+    transition-duration: 0.5s;
+
+}
+
+nav > a:hover{
+    background-color: var(--cor2);
+    color: var(--cor5);
+}
+
+main{ /* aqui esta escolhido a cor de fundo, a largura maxima, a largura miniuma, e a marrgin auto q deixa o conteudo centralizado de o escopo principal da pagina*/
+    
+    max-width: 1000px; /* tamano maximo */
+    min-width: 300px; /* tamano minimo */
+    margin: auto; /* deixar o main centralizado */
+    margin-bottom: 30px; /* deixar uma margem em baixo, entre o main e o roda pé */
+    padding: 20px; /* deixar um espaço entre o conteudo de dentro do main para as bordas */
+    background-color: white; /* cor de fundo do main */
+    text-align: left;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.658); /* botar uma sobra sem espalhamento no main */
+    border-bottom-left-radius: 10px; /* só a borda de baixo esquerdo */
+    border-bottom-right-radius: 10px; /* só a borda de baixo direito */
+}
+
+main p{
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px; /* coloca o espeço quando se incia umm paragrafo*/
+    font-size: 1em;
+    line-height: 2em; /*espeçamento entre linhas*/
+}
+
+main strong{/* mudar as palavras em strong dentro do main*/
+    color: var(--cor5);
+    font-weight: bolder;
+}
+
+main a{
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor3);
+}
+
+main h1{ /* aqui esta escolhido a cor e a font do ttitulo principal do escopo principal da pagina*/
+    color: var(--cor5);
+    font-family: var(--font-android);
+}
+
+main h2{ /* aqui esta escolhido a font do titulo seundario do escopo principal*/
+    font-family: var(--font-android);
+    color: var(--cor4);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    font-size: 1.3em;
+}
+
+main img { /* aqui foi ajustado para q a imagem tenha a largura 100% da pagina*/
+    width: 100%;
+}
+
+main img.pequena{
+    max-width: 350px;
+    display: block;
+    margin: auto;
+}
+
+aside{
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.562);
+}
+
+aside > h3{
+    background-color: var(--cor4);
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+aside > ul{
+    list-style-type: '\2714\00A0\00A0'; /* esse coigo é para iserir a imagem de check na lista e o 00a0 é bara dar espaço em quebrar a linha*/
+    list-style-position: inside; /*colocar as bolinhasda lista dentro do aside*/
+    columns: 2;
+}
+
+footer{
+    background-color: var(--cor5);
+    color: white;
+    font-size: 0.8em;
+    padding: 6px;
+}
+
+footer a{
+    background-color: var(--cor2);
+    text-decoration: none;
+    padding: 5px;
+    color: var(--cor5);
+    font-weight: bolder;
+}
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor1);
+}
